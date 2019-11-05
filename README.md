@@ -62,8 +62,6 @@ input_method = HiddenInputField
 title = shootingsample
 ```
 
-
-
 #### input/game.input_binding
 フォーマットは不明。  
 入力に関することが書いてある。
@@ -83,3 +81,28 @@ inputのファイルと同じ形式なのかな？
 name: "main"
 scale_along_z: 0
 ```
+
+## 画像を用意する
+### 画像をassetsディレクトリに置く
+ゲームなので画像がないと始まりません。
+enchant.jsの画像を使わせていただきます。
+- car.png
+- bomb.png
+
+プロジェクト直下に`assets`ディレクトリを作成し、これらのファイルをおきます。  
+
+### atlasファイルを作る
+DEFOLDで画像を使う場合は、画像を直接読み込まずにatlasというファイルを経由します。
+- assetsディレクトリで右クリック
+- Atlasを選択
+- `chara`という名前で保存
+
+参考: atlas https://defold.com/manuals/atlas/
+
+### atrasに画像を追加する
+- chara.atrasを開き、IDE右側のoutlineの`Atras`を右クリック
+- `Add Images`を選択
+- 画像を2つ選択する
+  - /assets/bomb.png
+  - /assets/car.png
+- ctrl + Sで保存する
