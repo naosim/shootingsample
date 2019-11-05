@@ -1,0 +1,15 @@
+@startuml
+folder Collection {
+  node GameObjectA {
+    [ComponentA-1]
+    [ComponentA-2]
+  }
+  node GameObjectB {
+    [ComponentB-1]
+    [ComponentB-2]
+  }
+  
+}
+
+GameObjectA -[hidden]- GameObjectB
+@enduml

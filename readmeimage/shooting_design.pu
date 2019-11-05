@@ -1,0 +1,38 @@
+@startuml
+folder main.collection {
+  node "<<GameObject>>\n自機" as GameObjectA {
+    [<<Component>>\n自機の動作プログラム] as own_code 
+    [<<Component>>\n自機のスプライト] as own_sprite
+  }
+  note bottom of own_code
+  プログラムはlua言語で書く
+  end note
+
+  note bottom of own_sprite
+  スプライトは表示する画像や位置情報をもったコンポーネント
+  画面に表示されるキャラクター(例えばマリオとか)のことだと思って良い
+  end note
+
+  node "<<GameObject>>\n敵" as GameObjectB {
+    [<<Component>>\n敵の動作プログラム]
+    [<<Component>>\n敵のスプライト]
+  }
+
+  node "<<GameObject>>\n敵の生成" as GameObjectC {
+    [<<Component>>\n敵の生成プログラム]
+    [<<Component>>\n敵ファクトリ] as enemy_factory
+    
+  }
+  note bottom of enemy_factory
+  ファクトリはGameObjectを生成するコンポーネント
+  ここでは敵<<GameObject>>を生成する
+  end note
+}
+
+
+
+GameObjectA -[hidden]-- GameObjectB
+GameObjectB -[hidden]- GameObjectC
+
+GameObjectB <.. enemy_factory : 生成
+@enduml
