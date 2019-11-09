@@ -1,0 +1,30 @@
+function init(self)
+	self.y = 0
+	go.set(go.get_id(), "position.x", 32)
+	go.set(go.get_id(), "position.y", self.y)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.y = self.y + 1
+	go.set(go.get_id(), "position.y", self.y)
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
